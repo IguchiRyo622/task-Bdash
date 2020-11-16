@@ -5,6 +5,7 @@
 
 <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 <div class="form-wrap">
+<%= render 'shared/error_messages', model: f.object %>
   <div class="form-header">
     <div class="title_bdash">
       <h4>ようこそ<span class="task-bdash">「TaskBdash」</span>へ</h4>
@@ -16,7 +17,7 @@
   <div class="form-group">
     <div class='form-text-wrap'>
     <%= f.label :ニックネーム, class:"form-text" %><br />
-    <%= f.text_field :nickname, class:"input-field", id:"nickname", placeholder:"ニックネーム", maxlength:"40", autofocus: true, autocomplete: "off" %>
+    <%= f.text_field :nickname, class:"input-field", id:"nickname", placeholder:"ニックネーム", autofocus: true, autocomplete: "off" %>
     </div>
   </div>
   <div class="form-group">
