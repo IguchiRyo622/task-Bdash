@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+/* ヘッダー全体 */
+.top-page-header{
+  height: 5%;
+  width: 100%;
+  background-color: lightgray;
+  opacity: 0.8;
+}
+.header-top{
+  display: flex;
+}
+
+/* Bdashロゴ */
+.header-bdash{
+  text-decoration: none;
+  font-family: 'Londrina Shadow', cursive;
+  font-size: 30px;
+  align-items: center;
+  margin: 10px 60% 10px 5%;
+  color: #333333;
+}
+
+/* ヘッダーメニュー */
+.nav {
+  font-size: 15px;
+}
+
+/* メニューリスト */
+.lists-right {
+  display: flex;
+  list-style: none;
+  font-weight: bold;
+}
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
