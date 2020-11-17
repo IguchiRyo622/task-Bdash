@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+/* ヘッダー全体 */
+.top-page-footer{
+  height: 5vh;
+  width: 100%;
+  background-color: slategray;
+  opacity: 0.8;
+}

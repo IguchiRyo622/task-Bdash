@@ -1,0 +1,33 @@
+.pages{
+  width: 100%;
+  height: 90vh;
+  margin: -15px 0 0;
+  background-color: snow;
+}
+.list-top{
+  margin-top: 20px;
+  display: flex;
+}
+.lists{
+  list-style: none;
+  display: flex;
+}
+.teams-new{
+  text-decoration: none;
+  align-items: center;
+  border: solid 1px rgb(84, 165, 197);
+  border-radius: 10px;
+  padding: 0 22px 30px 22px;
+  background-color: #ffffff;
+  color: black;
+  font-size: 20px;
+}
+.lists-new{
+  text-decoration: none;
+  border: solid 1px rgb(84, 165, 197);
+  border-radius: 10px;
+  padding: 0 22px 30px 22px;
+  background-color: #ffffff;
+  color: black;
+  font-size: 20px;
+}

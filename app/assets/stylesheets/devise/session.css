@@ -25,13 +25,14 @@
 .title_bdash{
   position: absolute;
   display: inline-block;
-  top: -35px;
+  top: -45px;
   left: 10px;
   padding: 0 9px;
   line-height: 1;
-  font-size: 20px;
+  font-size: 25px;
   background: #FFF;
   font-weight: bold;
+  font-family: 'Londrina Shadow', cursive;
 }
 .task-bdash{
   color: skyblue;
