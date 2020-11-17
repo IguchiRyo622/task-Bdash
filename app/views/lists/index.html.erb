@@ -1,16 +1,34 @@
 <%= render "shared/header" %>
 
 <div class="pages">
-  <div class="list-top">
-    <ul class="lists">
-      <li><%= link_to '新規チーム作成', "#", class: "teams-new" %></li>
-      <li><%= link_to '新規リスト作成', "#", class: "lists-new" %></li>
-    </ul>
+  <div class="team-top">
+    <div class="team-new">
+      <%= link_to '新規チーム作成', "#", class: "teams-create" %>
+    </div>
+    <div class="teams">
+      <div class="team-name">
+        <%= link_to 'チーム名', "#", class:"team-name" %>
+      </div>
+    </div>
   </div>
-  <div class="team-name">
-    <%# チームネーム %>
-    <div class="list-index">
-      <%# リストネーム %>
+  <div class="list-top">
+    <div class="list-new">
+      <%= link_to '新規リスト作成', "#", class:"lists-create" %>
+    </div>
+    <div class="lists">
+      <div class="list-name">
+        <%= link_to 'リスト名', "#", class:"list-name" %>
+      </div>
+    </div>
+  </div>
+  <div class="task-top">
+    <div class="task-new">
+      <%= link_to '新規タスク作成', "#", class:"tasks-create" %>
+    </div>
+    <div class="tasks">
+      <div class="task-name">
+        <%= link_to 'タスク名', "#", class:"task-name" %>
+      </div>
     </div>
   </div>
 </div>

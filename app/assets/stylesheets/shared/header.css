@@ -4,7 +4,7 @@
 /* ヘッダー全体 */
 .top-page-header{
   height: 5vh;
-  width: 100%;
+  width: 100vw;
   background-color: slategray;
   opacity: 0.8;
 }
