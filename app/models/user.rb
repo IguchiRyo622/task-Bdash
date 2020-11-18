@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
     with_options format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は英数字混合で入力してください' } do
       validates :password
+      validates :user_name, uniqueness: true
     end
   end
 end

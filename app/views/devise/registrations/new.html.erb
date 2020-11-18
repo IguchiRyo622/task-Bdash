@@ -22,6 +22,12 @@
     </div>
   </div>
   <div class="form-group">
+    <div class='form-text-wrap'>
+    <%= f.label :ユーザーID, class:"form-text" %><br />
+    <%= f.text_field :user_name, class:"input-field", id:"user_name", placeholder:"英数字混合で入力してください", autocomplete: "off" %>
+    </div>
+  </div>
+  <div class="form-group">
     <div class="form-text-wrap">
       <%= f.label :メールアドレス, class:"form-text" %><br />
       <%= f.email_field :email, class:"input-field", placeholder:"PC・携帯どちらでも可", autocomplete: "email" %>
