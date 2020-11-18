@@ -1,0 +1,41 @@
+<div class="explannation">
+  「TaskBdash」にはチームを基準にタスク管理を進めます<br>
+  もし1人で使う場合はuserを選択しないでください
+</div>
+
+<%=form_with model: @team, local: true do |f|%>
+<div class="form-wrap">
+<%= render 'shared/error_messages', model: f.object %>
+  <div class="form-header">
+    <a href="/" class="title_bdash">
+      <h4><span class="task-bdash">「Task-Bdash」</span></h4>
+      <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    </a>
+    <h2 class="form-header-text">
+      チーム作成
+    </h2>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+    <%= f.label :チーム名, class:"form-text" %><br />
+    <%= f.text_field :team_name, class:"input-field", id:"team_name", placeholder:"チーム名をつけましょう！", autofocus: true, autocomplete: "off" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+    <label class='form-text'>一緒に進めるチームメンバーを追加</label>
+      <select class="team_member" name="team[user_ids][]">
+        <option value="">ユーザーidを選択してください</option>
+        <% User.where.not(id: current_user.id).each do |user| %>
+          <option value=<%=user.id %>><%= user.user_name %></option>
+        <% end %>
+      </select>
+      <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    </div>
+  </div>
+  <div class="actions">
+      <%= f.submit "チーム作成", class:"devise-btn" %>
+  </div>
+</div>
+<% end %>
+  

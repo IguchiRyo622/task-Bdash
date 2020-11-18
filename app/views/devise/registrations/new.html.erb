@@ -7,10 +7,10 @@
 <div class="form-wrap">
 <%= render 'shared/error_messages', model: f.object %>
   <div class="form-header">
-    <div class="title_bdash">
+    <a href="/" class="title_bdash">
       <h4>ようこそ<span class="task-bdash">「Task-Bdash」</span>へ</h4>
       <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
-    </div>
+    </a>
     <h2 class="form-header-text">
       アカウント作成
     </h2>
@@ -50,3 +50,5 @@
   </div>
 </div>
 <% end %>
+
+<%= link_to "ログインはこちらから", new_session_path(resource_name) %>

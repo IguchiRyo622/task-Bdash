@@ -3,3 +3,6 @@ ja:
    attributes:
      user:
        nickname: ニックネーム
+       user_name: ユーザーid
+     team:
+       team_name: チーム名

@@ -1,10 +1,16 @@
 <div class="team-top">
   <div class="team-new">
-    <%= link_to '新規チーム作成', "#", class:"teams-create" %>
+    <%= link_to '新規チーム作成', new_team_path, class:"teams-create" %>
   </div>
+  <% if user_signed_in? %>
   <div class="teams">
-    <div class="team-name">
-      <%= link_to 'チーム名', "#", class:"team-name" %>
+    <% current_user.teams.each do |team| %>
+    <div class="team">
+      <div class="team-name">
+        <%= link_to team.team_name, "#" %>
+      </div>
     </div>
+    <% end %>
   </div>
+  <% end %>
 </div>
