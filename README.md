@@ -2,11 +2,12 @@
 
 ## usersテーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| nickname  | string | null: false |
+| user_name | string | null: false |
+| email     | string | null: false |
+| password  | string | null: false |
 
 ### Association
 - has_many: lists
