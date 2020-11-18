@@ -6,10 +6,10 @@
 <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
 <div class="form-wrap-session">
   <div class="form-header">
-    <div class="title_bdash">
+    <a href="/" class="title_bdash">
       <h4>ようこそ<span class="task-bdash">「Task-Bdash」</span>へ</h4>
       <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
-    </div>
+    </a>
     <h2 class="form-header-text">
       ログイン
     </h2>
@@ -43,3 +43,5 @@
   </div>
 </div>
 <% end %>
+
+<%= link_to "初めての方はこちらから", new_registration_path(resource_name) %>
