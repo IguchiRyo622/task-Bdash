@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
   with_options presence: true do
     validates :nickname, length: { maximum: 20 }
 
@@ -11,6 +12,7 @@ class User < ApplicationRecord
       validates :user_name, uniqueness: true
     end
   end
+  
   has_many :team_users
   has_many :teams, through: :team_users
 end
