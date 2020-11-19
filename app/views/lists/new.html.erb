@@ -1,16 +1,17 @@
+<%= render 'shared/header'%>
 <div class="explannation">
   「TaskBdash」は多くのタスクを管理するためにリストで分別することをオススメします<br>
   タスクを管理するリストを書きフォームから作成してください
 </div>
 
 <%=form_with model: [@team, @list], local: true do |f|%>
-<div class="form-wrap">
+<div class="form-wrap-list">
 <%= render 'shared/error_messages', model: f.object %>
   <div class="form-header">
-    <a href="/" class="title_bdash">
+    <div class="title_bdash">
       <h4><span class="task-bdash">「Task-Bdash」</span></h4>
       <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
-    </a>
+    </div>
     <h2 class="form-header-text">
       リスト作成
     </h2>
