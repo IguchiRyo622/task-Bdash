@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:index, :new]
   def index
+    @team = Team.find(params[:team_id])
+    @lists = @team.lists.includes(:user)
   end
 
   def new

@@ -3,10 +3,12 @@
     <%= link_to '新規リスト作成', new_team_list_path, class:"lists-create" %>
   </div>
   <div class="lists">
-    <% current_user.lists.each do |list| %>
+    <% @lists.each do |list| %>
+    <div class="list">
       <div class="list-name">
       <%= link_to list.list_name, "#", class:"list-name" %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
