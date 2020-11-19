@@ -13,6 +13,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to team_lists_path(@team)
     else
+      @lists = @team.lists.includes(:user)
       render :new
     end
   end
