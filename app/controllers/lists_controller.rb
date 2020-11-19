@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :authenticate_user!, only: :new
   def index
   end
 
@@ -20,6 +21,6 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:list).merge(user_id: current_user.id)
+    params.require(:list).permit(:list_name).merge(user_id: current_user.id)
   end
 end

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_11_19_051058) do
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "list", null: false
+    t.string "list_name", null: false
     t.bigint "team_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
