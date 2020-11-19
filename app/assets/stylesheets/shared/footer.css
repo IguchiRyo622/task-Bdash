@@ -4,7 +4,16 @@
 /* ヘッダー全体 */
 .top-page-footer{
   height: 5vh;
-  width: 100vw;
   background-color: slategray;
   opacity: 0.8;
+}
+.footer-top{
+  text-align: right;
+  margin-right: 20px;
+}
+.mail{
+  color: aliceblue;
+}
+.twitter{
+  color: aliceblue;
 }
