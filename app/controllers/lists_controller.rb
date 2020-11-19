@@ -1,17 +1,16 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
+  before_action :setting_team, only: [:index, :new, :create]
+
   def index
-    @team = Team.find(params[:team_id])
     @lists = @team.lists.includes(:user)
   end
 
   def new
     @list = List.new
-    @team = Team.find(params[:team_id])
   end
 
   def create
-    @team = Team.find(params[:team_id])
     @list = @team.lists.new(list_params)
     if @list.save
       redirect_to team_lists_path(@team)
@@ -24,5 +23,9 @@ class ListsController < ApplicationController
   private
   def list_params
     params.require(:list).permit(:list_name).merge(user_id: current_user.id)
+  end
+
+  def setting_team
+    @team = Team.find(params[:team_id])
   end
 end
