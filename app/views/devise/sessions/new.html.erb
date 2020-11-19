@@ -1,47 +1,46 @@
+<%= render 'shared/header'%>
 <div class="explannation">
   「TaskBdash」にはアカウントが必要になります<br>
-  下記フォームからログインしてください
+  下記フォームからログインしましょう！
 </div>
 
 <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
-<div class="form-wrap-session">
-  <div class="form-header">
-    <a href="/" class="title_bdash">
-      <h4>ようこそ<span class="task-bdash">「Task-Bdash」</span>へ</h4>
-      <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
-    </a>
-    <h2 class="form-header-text">
-      ログイン
-    </h2>
-  </div>
-  <div class='login-flash-message'>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      <%= f.label :メールアドレス, class:"form-text" %><br />
-      <%= f.email_field :email, class:"input-field", autofocus: true, autocomplete: "email" %>
+  <div class="form-wrap-session">
+    <div class="form-header">
+      <div class="title_bdash">
+        <h4>ようこそ<span class="task-bdash">「Task-Bdash」</span>へ</h4>
+        <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+      </div>
+      <h2 class="form-header-text">
+        ログイン
+      </h2>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      <%= f.label :パスワード, class:"form-text" %><br />
-      <%= f.password_field :password, class:"input-field", autocomplete: "current-password" %>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <%= f.label :メールアドレス, class:"form-text" %><br />
+        <%= f.email_field :email, class:"input-field", autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <%= f.label :パスワード, class:"form-text" %><br />
+        <%= f.password_field :password, class:"input-field", autocomplete: "current-password" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <% if devise_mapping.rememberable? %>
           <%= f.check_box :remember_me %>
           <%= f.label :ログイン状態を保存する %>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "ログイン", class:"devise-btn" %>
     </div>
   </div>
-  <div class="actions">
-      <%= f.submit "ログイン", class:"devise-btn" %>
-  </div>
-</div>
 <% end %>
-
-<%= link_to "初めての方はこちらから", new_registration_path(resource_name) %>

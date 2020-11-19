@@ -1,0 +1,29 @@
+<%= render 'shared/header'%>
+<div class="explannation">
+  「TaskBdash」は多くのタスクを管理するためにリストで分別することをオススメします<br>
+  タスクを管理するリストを書きフォームから作成してください
+</div>
+
+<%=form_with model: [@team, @list], local: true do |f|%>
+<div class="form-wrap-list">
+<%= render 'shared/error_messages', model: f.object %>
+  <div class="form-header">
+    <div class="title_bdash">
+      <h4><span class="task-bdash">「Task-Bdash」</span></h4>
+      <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    </div>
+    <h2 class="form-header-text">
+      リスト作成
+    </h2>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+    <%= f.label :リスト名, class:"form-text" %><br />
+    <%= f.text_field :list_name, class:"input-field", id:"list_name", placeholder:"２０文字以内で入力してください", autofocus: true, autocomplete: "off" %>
+    </div>
+  </div>
+  <div class="actions">
+      <%= f.submit "リスト作成", class:"devise-btn" %>
+  </div>
+</div>
+<% end %>

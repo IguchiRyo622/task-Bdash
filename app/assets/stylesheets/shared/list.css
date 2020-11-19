@@ -1,0 +1,39 @@
+.list-new{
+  width: 70%;
+  padding: 0.5em;
+  margin: 1em 0.5em 0;
+  font-weight: bold;
+  border: double 5px #6091d3;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.lists-create{
+  margin: 0; 
+  padding: 0;
+  text-decoration: none;
+  color: #6091d3;
+}
+.lists{
+  width: 70%;
+  padding: 0.5em;
+  margin: 1em 0.5em 0;
+  font-weight: bold;
+  color: #6091d3;
+  border: solid 3px black;
+  border-radius: 5px;
+}
+.list{
+  padding: 0.5em;
+  font-weight: bold;
+  color: #6091d3;
+  border: double 5px #6091d3;
+  border-radius: 5px;
+}
+.list-name{
+  margin: 0; 
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  color: #6091d3;
+}
