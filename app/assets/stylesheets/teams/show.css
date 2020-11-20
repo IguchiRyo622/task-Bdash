@@ -1,0 +1,37 @@
+.team-wrap{
+  padding: 8px 19px;
+  margin: 2em 30%;
+  color: #2c2c2f;
+  border-top: solid 5px #5989cf;
+  border-bottom: solid 5px #5989cf;
+}
+
+.team-action{
+  text-align: center;
+}
+.action-btn{
+  list-style: none;
+  width: 100%;
+  margin-top: 50px;
+}
+.team-edit-btn{
+  text-decoration: none;
+  background-color: skyblue;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 3vw;
+}
+.or-text{
+  font-size: 20px;
+}
+.team-destroy{
+  text-decoration: none;
+  background-color: skyblue;
+  text-align: center;
+  font-size: 20px;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 5vw;
+}

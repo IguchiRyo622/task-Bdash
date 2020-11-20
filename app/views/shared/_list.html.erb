@@ -4,7 +4,7 @@
   </div>
   <div class="lists">
     <div class="team-info">
-      <%= @team.team_name %>
+      <%= link_to @team.team_name, team_path(@team.id), class:"team-text" %>
     </div>
     <% @lists.each do |list| %>
     <div class="list">
