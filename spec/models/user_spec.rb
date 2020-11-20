@@ -5,7 +5,7 @@ describe User do
   end
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
-      it 'nicknameとemail、passwordとpassword_confirmationが存在すれば登録できる' do
+      it 'nicknameとuser_name、email、passwordとpassword_confirmationが存在すれば登録できる' do
         expect(@user).to be_valid
       end
       it 'passwordが英数字混合で6文字以上で登録できる' do
@@ -20,6 +20,21 @@ describe User do
         @user.nickname = ''
         @user.valid?
         expect(@user.errors.full_messages).to include('ニックネームを入力してください')
+      end
+      it 'user_nameが空だと登録できない' do
+        @user.user_name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('ユーザーidを入力してください')
+      end
+      it 'user_nameがアルファベットだけだと登録できない' do
+        @user.user_name = 'Name'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('ユーザーidは英数字混合で入力してください')
+      end
+      it 'user_nameが数字だけだと登録できない' do
+        @user.user_name = '123'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('ユーザーidは英数字混合で入力してください')
       end
       it 'emailが空だと登録できない' do
         @user.email = ''
