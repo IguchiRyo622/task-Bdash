@@ -20,6 +20,7 @@
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
 | team_name | string | null: false |
+| team_info | text   |             |
 
 ### Association
 - has_many: team_users

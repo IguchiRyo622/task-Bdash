@@ -5,9 +5,30 @@
   border-top: solid 5px #5989cf;
   border-bottom: solid 5px #5989cf;
 }
+/* チームメンバー */
+.team-member-top{
+  text-align: right;
+}
+.team-member{
+  font-size: 18px;
+  color: #5989cf;
+}
 
+/* チーム情報 */
+.team-info-top{
+  text-align: center;
+  font-size: 18px;
+  color: #5989cf;
+}
+.team-info{
+  text-align: center;
+}
+
+/* ボタン */
 .team-action{
   text-align: center;
+  margin: 0 0 5vh;
+  border-top: dashed 2px lightblue;
 }
 .action-btn{
   list-style: none;

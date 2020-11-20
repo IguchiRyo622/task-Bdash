@@ -1,18 +1,30 @@
 <%= render 'shared/header' %>
+<div class="explannation">
+  
+  チーム編集からチーム情報、説明を載せることができます
+</div>
 
 <div class="team-wrap">
   <div class="team-name">
     <%= @team.team_name %>
   </div>
-  <div class:"team-member">
-    チームメンバー<br>
+  <div class="team-member-top">
+    <div class="team-member">チームメンバー</div>
     <% @team.users.each do |user| %>
       <%= user.nickname %>
     <% end %>
   </div>
+
+  <% if @team.team_info.present? %>
+  <div class="team-info-top">チーム情報</div>
+    <div class="team-info">
+      <%= @team.team_info %>
+    </div>
+  <% end %>
+
   <div class="team-action">
     <div class="action-btn">
-      <%= link_to 'チームの編集', "#", method: :get, class: "team-edit-btn" %>
+      <%= link_to 'チームの編集', edit_team_path(@team.id), method: :get, class: "team-edit-btn" %>
       <p class='or-text'>OR</p>
       <%= link_to '削除', "#", method: :delete, class:'team-destroy' %>
     </div>

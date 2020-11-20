@@ -1,0 +1,42 @@
+<%= render 'shared/header'%>
+
+<%=form_with model: @team, local: true do |f|%>
+<div class="form-wrap-team">
+  <div class="form-header">
+    <div class="title_bdash">
+      <h4><span class="task-bdash">「Task-Bdash」</span></h4>
+      <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+    </div>
+    <h2 class="form-header-text">
+      チーム編集
+    </h2>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+    <%= f.label :チーム名, class:"form-text" %><br />
+    <%= f.text_field :team_name, class:"input-field", id:"team_name", placeholder:"チーム名をつけましょう！", autofocus: true, autocomplete: "team_name" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+    <label class='form-text'>一緒に進めるチームメンバーを追加</label>
+      <select class="team_member" name="team[user_ids][]">
+        <option value="">ユーザーidを選択してください</option>
+        <% User.where.not(id: current_user.id).each do |user| %>
+          <option value=<%=user.id %>><%= user.user_name %></option>
+        <% end %>
+      </select>
+      <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+    <%= f.label :チーム情報, class:"form-text" %><br />
+    <%= f.text_area :team_info, class:"info-field", id:"team_info", placeholder:"チーム情報を持たせる場合にお使いください(文字制限:1000)", rows:"7" ,maxlength:"1000" %>
+    </div>
+  </div>
+  <div class="actions">
+      <%= f.submit "チーム作成", class:"devise-btn" %>
+  </div>
+</div>
+<% end %>
