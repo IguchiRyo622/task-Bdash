@@ -1,0 +1,20 @@
+<%= render 'shared/header' %>
+
+<div class="team-wrap">
+  <div class="team-name">
+    <%= @team.team_name %>
+  </div>
+  <div class:"team-member">
+    チームメンバー<br>
+    <% @team.users.each do |user| %>
+      <%= user.nickname %>
+    <% end %>
+  </div>
+  <div class="team-action">
+    <div class="action-btn">
+      <%= link_to 'チームの編集', "#", method: :get, class: "team-edit-btn" %>
+      <p class='or-text'>OR</p>
+      <%= link_to '削除', "#", method: :delete, class:'team-destroy' %>
+    </div>
+  </div>
+</div>
