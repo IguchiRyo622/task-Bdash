@@ -3,6 +3,9 @@
     <%= link_to '新規リスト作成', new_team_list_path, class:"lists-create" %>
   </div>
   <div class="lists">
+    <div class="team-info">
+      <%= @team.team_name %>
+    </div>
     <% @lists.each do |list| %>
     <div class="list">
       <div class="list-name">
