@@ -19,9 +19,19 @@ class TeamsController < ApplicationController
   end
 
   def show
+    if current_user.id == @team.team_users[0].user_id
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
+    if current_user.id == @team.team_users[0].user_id
+      render :edit
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -33,8 +43,12 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @team.destroy
-    redirect_to root_path
+    if current_user.id == @team.team_users[0].user_id
+      @team.destroy
+      redirect_to root_path
+    else
+      render root_path
+    end
   end
 
   private
@@ -49,4 +63,5 @@ class TeamsController < ApplicationController
   def setting_team
     @team = Team.find(params[:id])
   end
+
 end
