@@ -1,10 +1,10 @@
 <div class="task-top">
   <div class="task-new">
-    <%= link_to '新規タスク作成', "#", class:"tasks-create" %>
+    <%= link_to '新規タスク作成', new_team_list_task_path, class:"tasks-create" %>
   </div>
   <div class="tasks">
     <div class="task-name">
-      <%= link_to 'タスク名', "#", class:"task-name" %>
+      <%= link_to @list.list_name, "#", class:"task-name" %>
     </div>
   </div>
 </div>
