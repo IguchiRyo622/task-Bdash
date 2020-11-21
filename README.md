@@ -2,18 +2,19 @@
 
 ## usersテーブル
 
-| Column    | Type   | Options     |
-| --------- | ------ | ----------- |
-| nickname  | string | null: false |
-| user_name | string | null: false |
-| email     | string | null: false |
-| password  | string | null: false |
+| Column    | Type   | Options                   |
+| --------- | ------ | ------------------------- |
+| nickname  | string | null: false               |
+| user_name | string | null: false, unique: true |
+| email     | string | null: false               |
+| password  | string | null: false               |
 
 ### Association
 - has_many: lists
 - has_many: comments
 - has_many: team_users
 - has_many: team, through: team_users
+
 
 ## teamsテーブル
 
@@ -27,6 +28,7 @@
 - has_many: user, through: team_users
 - has_many: lists
 
+
 ## team_usersテーブル
 
 | Column  | Type      | Options                        |
@@ -39,6 +41,7 @@
 - belongs_to: team
 
 ## listsテーブル
+
 | Column    | Type      | Options                        |
 | --------- | --------- | ------------------------------ |
 | list_name | string    | null: false                    |
@@ -47,9 +50,11 @@
 
 ### Association
 - belongs_to: user
-- has_one: task
+- has_many: tasks
+
 
 ## tasksテーブル
+
 | Column       | Type      | Options                        |
 | ------------ | --------- | ------------------------------ |
 | task_name    | string    | null: false                    |
@@ -57,11 +62,24 @@
 | target_date  | datetime  |                                |
 | report       | string    |                                |
 | final_report | string    |                                |
+| task_item    | string    |                                |
 | list         | reference | null: false, foreign_key: true |
 
 ### Association
 - belongs_to: list
+- has_many: items
 - has_many: comments
+
+
+## itemsテーブル
+
+| Column     | Type    | Option           |
+| ---------- | ------- |----------------- |
+| item_check | boolean | default: "false" |
+
+### Association
+- belongs_to: task
+
 
 ## commentsテーブル
 
