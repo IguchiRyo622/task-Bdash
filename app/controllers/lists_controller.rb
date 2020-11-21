@@ -4,6 +4,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = @team.lists.includes(:user)
+    @list = List.find_by(params[:list_id])
   end
 
   def new
