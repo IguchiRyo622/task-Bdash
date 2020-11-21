@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_20_074836) do
+ActiveRecord::Schema.define(version: 2020_11_21_143508) do
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "list_name", null: false
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 2020_11_20_074836) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_lists_on_team_id"
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "task_name", null: false
+    t.text "content"
+    t.datetime "target_date"
+    t.string "report"
+    t.string "final_report"
+    t.string "task_item"
+    t.bigint "list_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "team_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,6 +70,8 @@ ActiveRecord::Schema.define(version: 2020_11_20_074836) do
 
   add_foreign_key "lists", "teams"
   add_foreign_key "lists", "users"
+  add_foreign_key "tasks", "lists"
+  add_foreign_key "tasks", "users"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"
 end
