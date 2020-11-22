@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new]
   before_action :setting_team_list, only: [:index, :new, :create]
 
   def index

@@ -1,20 +1,22 @@
 body{
-  overflow: hidden;
   margin: 0;
 }
 /* ページ全体 */
 .pages{
   display: flex;
-  height: 88vh;
   background: linear-gradient(-135deg, #05fbff41, #ffffff);
+  height: 88vh;
 }
 /* 部分テンプレート */
 .team-top{
   width: 20%;
+  overflow: scroll;
 }
 .list-top{
   width: 30%;
+  overflow: scroll;
 }
 .task-top{
   width: calc(100vw - 20% - 30%);
+  overflow: scroll;
 }

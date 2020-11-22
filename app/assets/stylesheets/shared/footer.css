@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
 }
-/* ヘッダー全体 */
+/* フッター全体 */
 .top-page-footer{
   height: 5vh;
   background-color: slategray;
   opacity: 0.8;
+  bottom: 0;
+  width: 100%;
 }
 .footer-top{
   text-align: right;
