@@ -33,11 +33,12 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :タスク要点, class:"form-text" %><br />
-      <%= f.text_field :task_item, class: 'input-field' %>
+      <%= f.text_field :task_item, class: 'input-field', placeholder:"タスクの要点を書き出しましょう" %>
     </div>
   </div>
   <div class="actions">
-      <%= f.submit "チーム作成", class:"devise-btn" %>
+      <%= f.submit "タスク作成", class:"devise-btn" %>
   </div>
+  <%= link_to '戻る', team_list_tasks_path(@team.id,@list.id)%>
 </div>
 <% end %>
