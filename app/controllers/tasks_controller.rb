@@ -4,7 +4,8 @@ class TasksController < ApplicationController
 
   def index
     @lists = @team.lists.includes(:user)
-    @tasks = Task.all
+    @tasks = @list.tasks.includes(:list)
+    @task = Task.find_by(params[:task_id])
   end
 
   def new
@@ -27,6 +28,6 @@ class TasksController < ApplicationController
 
   def setting_team_list
     @team = Team.find(params[:team_id])
-    @list = List.find_by(params[:list_id])
+    @list = List.find(params[:list_id])
   end
 end
