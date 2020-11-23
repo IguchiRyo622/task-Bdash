@@ -19,11 +19,6 @@ class TeamsController < ApplicationController
   end
 
   def show
-    if current_user.id == @team.team_users[0].user_id
-      render :show
-    else
-      redirect_to root_path
-    end
   end
 
   def edit

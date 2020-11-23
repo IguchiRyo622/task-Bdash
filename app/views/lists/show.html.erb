@@ -1,0 +1,20 @@
+<%= render 'shared/header' %>
+<%# showアクションはteams/show.cssを適用 %>
+<div class="team-wrap">
+  <div class="team-name">
+    <%= @list.list_name %>
+  </div>
+  <div class="team-member-top">
+    <div class="team-member">リスト製作者</div>
+    <%= @list.user.nickname %>
+  </div>
+
+  <div class="team-action">
+    <div class="action-btn">
+      <%= link_to 'リストの編集', "#", method: :get, class: "team-edit-btn" %>
+      <p class='or-text'>OR</p>
+      <%= link_to '削除', "#", method: :delete, class:'team-destroy' %>
+    </div>
+  </div>
+  <%= link_to '戻る', team_list_tasks_path(@team.id,@list.id)%>
+</div>
