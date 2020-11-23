@@ -1,9 +1,9 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
-  before_action :setting_team, only: [:index, :new, :create, :show]
+  before_action :setting_team, only: [:index, :new, :create, :show, :edit, :update]
+  before_action :setting_list, only: [:index, :show, :edit]
 
   def index
-    @list = List.find_by(params[:list_id])
     @lists = @team.lists.includes(:user)
   end
 
@@ -22,7 +22,14 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find_by(params[:list_id])
+  end
+
+  def edit
+  end
+
+  def update
+    @list = @team.lists.update(list_params)
+    redirect_to team_lists_path(@team)
   end
 
   private
@@ -32,5 +39,9 @@ class ListsController < ApplicationController
 
   def setting_team
     @team = Team.find(params[:team_id])
+  end
+
+  def setting_list
+    @list = List.find_by(params[:list_id])
   end
 end
