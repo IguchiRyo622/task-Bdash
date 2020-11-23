@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="pages">
-<% if current_user.id == @team.team_users[0].user_id %>
+<% if current_user.id == @list.team.team_users[0].user_id %>
   <%= render "shared/team"%>
   <%= render "shared/list"%>
   <%= render "shared/task"%>
