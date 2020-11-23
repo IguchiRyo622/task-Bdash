@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new]
-  before_action :setting_team, only: [:index, :new, :create, :show, :edit, :update]
-  before_action :setting_list, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:index, :new, :show, :edit, :destroy]
+  before_action :setting_team, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_action :setting_list, only: [:show, :edit, :update, :destroy]
 
   def index
     @list = List.find_by(params[:list_id])
@@ -34,6 +34,11 @@ class ListsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @list.destroy
+    redirect_to root_path
   end
 
   private
