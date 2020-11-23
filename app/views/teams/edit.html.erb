@@ -36,7 +36,8 @@
       </div>
     </div>
     <div class="actions">
-      <%= f.submit "チーム作成", class:"devise-btn" %>
+      <%= f.submit "編集", class:"devise-btn" %>
     </div>
+    <%= link_to '戻る', team_path(@team.id,@list)%>
   </div>
 <% end %>

@@ -1,0 +1,26 @@
+<%= render 'shared/header'%>
+
+<%=form_with model: [@team, @list], local: true do |f|%>
+  <div class="form-wrap-team">
+    <div class="form-header">
+      <div class="title_bdash">
+        <h4><span class="task-bdash">「Task-Bdash」</span></h4>
+        <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+      </div>
+      <h2 class="form-header-text">
+        リスト編集
+      </h2>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+      <%= f.label :リスト名, class:"form-text" %><br />
+      <%= f.text_field :list_name, class:"input-field", id:"list_name", placeholder:"リスト名をつけましょう！", autofocus: true, autocomplete: "team_name" %>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit "編集", class:"devise-btn" %>
+    </div>
+    <%= link_to '戻る', team_list_path(@team.id, @list)%>
+  </div>
+<% end %>

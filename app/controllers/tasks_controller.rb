@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     @task = @list.tasks.new(task_params)
     if @task.save
-      redirect_to team_list_tasks_path(@list)
+      redirect_to team_list_tasks_path(@team, @list, @list)
     else
       render :new
     end

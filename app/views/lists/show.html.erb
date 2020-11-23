@@ -11,7 +11,7 @@
 
   <div class="team-action">
     <div class="action-btn">
-      <%= link_to 'リストの編集', "#", method: :get, class: "team-edit-btn" %>
+      <%= link_to 'リストの編集', edit_team_list_path(@team.id,@list.id), method: :get, class: "team-edit-btn" %>
       <p class='or-text'>OR</p>
       <%= link_to '削除', "#", method: :delete, class:'team-destroy' %>
     </div>
