@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
-  before_action :setting_team, only: [:index, :new, :create]
+  before_action :setting_team, only: [:index, :new, :create, :show]
 
   def index
     @list = List.find_by(params[:list_id])
@@ -19,6 +19,10 @@ class ListsController < ApplicationController
       @lists = @team.lists.includes(:user)
       render :new
     end
+  end
+
+  def show
+    @list = List.find_by(params[:list_id])
   end
 
   private
