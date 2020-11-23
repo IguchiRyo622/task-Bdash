@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   before_action :setting_team, only: [:index, :new, :create]
 
   def index
+    @list = List.find_by(params[:list_id])
     @lists = @team.lists.includes(:user)
   end
 

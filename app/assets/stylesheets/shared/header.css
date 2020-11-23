@@ -6,6 +6,7 @@
   height: 7vh;
   background-color: slategray;
   opacity: 0.8;
+  width: 100%;
 }
 .header-top{
   display: flex;

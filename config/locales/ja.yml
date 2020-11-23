@@ -8,3 +8,5 @@ ja:
        team_name: チーム名
      list:
        list_name: リスト名
+     task:
+       task_name: タスク名
