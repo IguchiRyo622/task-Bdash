@@ -1,52 +1,52 @@
 <%= render 'shared/header' %>
-<%# showアクションはteams/show.cssを適用 %>
+<%# showアクションはteams/show.cssも適用 %>
 <div class="team-wrap">
   <div class="team-name">
     <%= @task.task_name %>
   </div>
-  <div class="team-member-top">
+  <div class="task-member-top">
     <div class="team-member">タスク管理者</div>
-    <%= @list.user.nickname %>
+    <%= @user.nickname %>
   </div>
 
-  <div class="task-content">
-    <div class="content-top">
+  <ul class="task-content">
+    <li class="content-top">
       <div class="content">タスク内容</div>
       <% if @task.content.present? %>
         <div class="task-contens"><%= @task.content %></div>
       <% else %>
         <div class="temporary">編集からタスク内容を追加しましょう!</div>
       <% end %>
-    </div>
-    <div class="target-date-top">
+    </li>
+    <li class="content-top">
       <div class="target-date">タスク完了目標日</div>
       <% if @task.target_date.present? %>
         <div class="task-contens"><%= @task.target_date.to_s(:datetime_jp) %></div>
       <% else %>
         <div class="temporary">編集から目標完了日を設定しましょう!</div>
       <% end %>
-    </div>
-    <div class="report-top">
+    </li>
+    <li class="content-top">
       <div class="report">レポート</div>
       <% if @task.report.present? %>
         <div class="task-contens"><%= @task.report %></div>
       <% else %>
         <div class="temporary">編集から作業報告をしましょう!</div>
       <% end %>
-    </div>
-    <div class="final-report-top">
+    </li>
+    <li class="content-top">
       <div class="final-report">完了レポート</div>
       <% if @task.final_report.present? %>
         <div class="task-contens"><%= @task.final_report %></div>
       <% else %>
         <div class="temporary">編集から完了報告をしましょう!</div>
       <% end %>
-    </div>
-    <div class="task-item-top">
+    </li>
+    <li class="content-top">
       <div class="task-item">タスク項目</div>
       <div class="task-contens"><%= @task.task_item %></div>
-    </div>
-  </div>
+    </li>
+  </ul>
 
   <div class="team-action">
     <% if current_user.id == @task.user_id %>

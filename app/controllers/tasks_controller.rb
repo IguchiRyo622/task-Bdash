@@ -25,6 +25,7 @@ class TasksController < ApplicationController
     @lists = @team.lists.includes(:user)
     @tasks = @list.tasks.includes(:list)
     @task = Task.find(params[:id])
+    @user = User.find_by(id: @task.user_id)
   end
 
   private
