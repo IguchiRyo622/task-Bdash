@@ -9,7 +9,7 @@
     <% @tasks.each do |task| %>
     <div class="task">
       <div class="task-name">
-        <%= link_to task.task_name, "#", class:"task-name" %>
+        <%= link_to task.task_name, team_list_task_path(@team.id, @list.id, task), class:"task-name" %>
       </div>
     </div>
     <% end %>

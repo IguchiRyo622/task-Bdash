@@ -1,0 +1,31 @@
+.content-top{
+  border-top: dashed 2px lightblue;
+}
+.content{
+  font-size: 18px;
+  color: #5989cf;
+}
+.report{
+  font-size: 18px;
+  color: #5989cf;
+}
+.final-report{
+  font-size: 18px;
+  color: #5989cf;
+}
+.temporary{
+  margin-left: 1em;
+  color: lightgrey;
+}
+.target-date{
+  font-size: 18px;
+  color: #5989cf;
+}
+.task-item{
+  font-size: 18px;
+  color: #5989cf;
+}
+
+.task-contens{
+  margin-left: 1em;
+}
