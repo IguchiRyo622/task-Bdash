@@ -1,0 +1,36 @@
+.task-member-top{
+  border-bottom: dashed 2px lightblue;
+  text-align: right;
+}
+.content-top{
+  margin-top: 1em;
+}
+li{
+  list-style: none;
+}
+.content{
+  font-size: 18px;
+  color: #5989cf;
+}
+.report{
+  font-size: 18px;
+  color: #5989cf;
+}
+.final-report{
+  font-size: 18px;
+  color: #5989cf;
+}
+.temporary{
+  color: lightgrey;
+}
+.target-date{
+  font-size: 18px;
+  color: #5989cf;
+}
+.task-item{
+  font-size: 18px;
+  color: #5989cf;
+}
+
+.task-contens{
+}

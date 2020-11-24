@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
-  before_action :setting_team_list, only: [:index, :new, :create]
+  before_action :setting_team_list, only: [:index, :new, :create, :show]
 
   def index
     @lists = @team.lists.includes(:user)
@@ -19,6 +19,13 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @lists = @team.lists.includes(:user)
+    @tasks = @list.tasks.includes(:list)
+    @task = Task.find(params[:id])
+    @user = User.find_by(id: @task.user_id)
   end
 
   private
