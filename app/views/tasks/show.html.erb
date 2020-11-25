@@ -53,7 +53,7 @@
     <div class="action-btn">
       <%= link_to 'タスクの編集', edit_team_list_task_path(@team.id, @list.id, @task), method: :get, class: "team-edit-btn" %>
       <p class='or-text'>OR</p>
-      <%= link_to '削除', "#", method: :delete, class:'team-destroy' %>
+      <%= link_to '削除', team_list_task_path(@team.id, @list.id, @task), method: :delete, class:'team-destroy' %>
     </div>
     <% else %>
       <div class="temporary">編集は管理者のみが可能です</div>

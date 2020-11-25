@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
-  before_action :setting_team_list, only: [:index, :new, :create, :show, :edit, :edit, :update]
-  before_action :setting_task, only: [:show, :edit, :update]
+  before_action :setting_team_list
+  before_action :setting_task, only: [:show, :edit, :update, :destroy]
   before_action :setting_includes, only: [:index, :show, :edit]
 
   def index
@@ -34,6 +34,11 @@ class TasksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to root_path
   end
 
   private
