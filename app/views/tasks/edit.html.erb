@@ -1,0 +1,55 @@
+<%= render 'shared/header'%>
+
+<%=form_with model: [@team, @list, @task], local: true do |f|%>
+  <div class="form-wrap-team">
+    <div class="form-header">
+      <div class="title_bdash">
+        <h4><span class="task-bdash">「Task-Bdash」</span></h4>
+        <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap" rel="stylesheet">
+      </div>
+      <h2 class="form-header-text">
+        タスク編集
+      </h2>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+      <%= f.label :タスク名, class:"form-text" %><br />
+      <%= f.text_field :task_name, class:"input-field", id:"list_name", placeholder:"タスク名をつけましょう！", autofocus: true, autocomplete: "team_name" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <%= f.label :タスク内容, class:"form-text" %><br />
+        <%= f.text_area :content, class:"info-field", id:"content", placeholder:"タスク内容(文字制限:1000)", rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <%= f.label :タスク完了目標日時, class:"form-text" %><br />
+        <%= f.datetime_field :target_date, class: 'date-select' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <%= f.label :作業報告, class:"form-text" %><br />
+        <%= f.text_field :report, class: 'input-field', id:"report", placeholder:"今日の作業報告をしましょう！" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <%= f.label :最終作業報告, class:"form-text" %><br />
+        <%= f.text_field :final_report, class: 'input-field', id:"final-report", placeholder:"タスク完了報告をしましょう！" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <%= f.label :タスク要点, class:"form-text" %><br />
+        <%= f.text_field :task_item, class: 'input-field', placeholder:"タスクの要点を書き出しましょう" %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "編集", class:"devise-btn" %>
+    </div>
+    <%= link_to '戻る', team_list_task_path(@team.id, @list)%>
+  </div>
+<% end %>
