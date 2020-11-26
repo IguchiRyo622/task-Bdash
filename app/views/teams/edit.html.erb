@@ -21,13 +21,25 @@
       <div class="form-text-wrap">
       <label class='form-text'>一緒に進めるチームメンバーを追加</label>
         <select class="team_member" name="team[user_ids][]">
-          <option value="">ユーザーidを選択してください</option>
           <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=""></option>
             <option value=<%=user.id %>><%= user.user_name %></option>
           <% end %>
         </select>
         <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
+      <script>
+      $(function () {
+      $('.team_member').select2({
+        width: '65%',
+        placeholder: 'ユーザーidを検索できます',
+        allowClear: true,
+        //複数選択を有効にします。
+        multiple: true,
+        tags: true
+        });
+      });
+      </script>
     </div>
     <div class="form-group">
       <div class='form-text-wrap'>
