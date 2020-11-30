@@ -22,11 +22,6 @@ class TeamsController < ApplicationController
   end
 
   def edit
-    if current_user.id == @team.team_users[0].user_id
-      render :edit
-    else
-      redirect_to root_path
-    end
   end
 
   def update

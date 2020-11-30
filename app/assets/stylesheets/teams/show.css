@@ -21,7 +21,8 @@
   color: #5989cf;
 }
 .team-info{
-  text-align: center;
+  margin-left: 2em;
+  white-space: pre-wrap;
 }
 
 /* ボタン */
