@@ -13,6 +13,9 @@
   font-size: 18px;
   color: #5989cf;
 }
+.user-path{
+  color: black;
+}
 
 /* チーム情報 */
 .team-info-top{
@@ -22,7 +25,8 @@
 }
 .team-info{
   margin-left: 2em;
-  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
 }
 
 /* ボタン */

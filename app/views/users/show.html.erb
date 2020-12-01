@@ -1,0 +1,37 @@
+<%= render 'shared/header'%>
+<div class="user-wrap">
+  <%# ユーザーのニックネームとユーザーidを表示 %>
+  <div class="user-name-top">ニックネーム</div>
+  <div class="user-name">
+    <%= @user.nickname %>
+  </div>
+  <div class="user-id-top">ユーザーID</div>
+  <div class="user-id">
+    <%= @user.user_name %>
+  </div>
+
+  <% if @user.profile.present? %>
+  <div class="user-info-top">ユーザー情報</div>
+    <div class="user-info">
+      <%= @user.profile %>
+    </div>
+  <% end %>
+
+  <%# ユーザーが所属するチームの一覧を表示 %>
+  <% if @user.id == current_user.id %>
+    <div class="user-team-wrap">
+      <div class="user-team-top"><%= @user.nickname%>が所属するチーム</div>
+      <% @user.teams.each do |team| %>
+        <div class="user-team">
+          <%= link_to team.team_name, team_lists_path(team), class:"team-name" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="team-action">
+      <div class="action-btn">
+        <%= link_to 'ユーザーの編集', edit_user_registration_path, method: :get, class: "team-edit-btn" %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to '戻る', :back %>
+</div>
