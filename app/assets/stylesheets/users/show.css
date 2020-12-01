@@ -1,0 +1,31 @@
+/* ユーザー詳細全体 */
+.user-wrap{
+  padding: 8px 19px;
+  margin: 2em 30%;
+  color: #2c2c2f;
+  border-top: solid 5px #5989cf;
+  border-bottom: solid 5px #5989cf;
+}
+
+/* ニックネーム */
+.user-name{
+  margin: 0; 
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  color: #6091d3;
+}
+/* ユーザーid */
+.user-id{
+  font-size: 18px;
+  color: #5989cf;
+}
+
+/* ユーザーの所属するチーム */
+.user-team{
+  padding: 0.5em;
+  font-weight: bold;
+  color: #6091d3;
+  border: double 5px #6091d3;
+  border-radius: 5px;
+}

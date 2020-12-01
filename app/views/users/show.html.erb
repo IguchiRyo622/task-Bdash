@@ -1,0 +1,23 @@
+<%= render 'shared/header'%>
+<div class="user-wrap">
+  <%# ユーザーのニックネームとユーザーidを表示 %>
+  <div class="user-name-top">ニックネーム</div>
+  <div class="user-name">
+    <%= @user.nickname %>
+  </div>
+  <div class="user-id-top">ユーザーID</div>
+  <div class="user-id">
+    <%= @user.user_name %>
+  </div>
+
+  <%# ユーザーが所属するチームの一覧を表示 %>
+  <% if @user.id == current_user.id %>
+    <div class="user-team-top">
+      <% @user.teams.each do |team| %>
+        <div class="user-team">
+          <%= link_to team.team_name, team_lists_path(team), class:"team-name" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
