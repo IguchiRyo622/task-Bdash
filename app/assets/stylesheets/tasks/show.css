@@ -35,3 +35,20 @@ li{
 .task-contens{
   white-space: pre-wrap;
 }
+.comment{
+  border-top: dashed 2px lightblue;
+  font-size: 15px;
+}
+.comment-time{
+  font-size: 10px;
+}
+
+.comment-btn{
+  width: 25%;
+  background: skyblue;
+  border: 1px solid skyblue;
+  color: #fff;
+  line-height: 45px;
+  font-size: 15px;
+  cursor: pointer;
+}
