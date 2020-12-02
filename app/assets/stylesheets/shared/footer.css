@@ -4,14 +4,14 @@
 /* フッター全体 */
 .top-page-footer{
   height: 5vh;
-  background-color: slategray;
-  opacity: 0.8;
-  bottom: 0;
   width: 100%;
+  background-color: slategray;
+  bottom: 0;
+  opacity: 0.8;
 }
 .footer-top{
-  text-align: right;
   margin-right: 20px;
+  text-align: right;
 }
 .mail{
   color: aliceblue;

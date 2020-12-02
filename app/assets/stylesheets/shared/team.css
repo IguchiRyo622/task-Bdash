@@ -1,3 +1,29 @@
+/* 部分テンプレート */
+.team-top{
+  width: 20%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.team-top::-webkit-scrollbar{
+  display: none;
+}
+.list-top{
+  width: 30%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.list-top::-webkit-scrollbar{
+  display: none;
+}
+.task-top{
+  width: calc(100vw - 20% - 30%);
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.task-top::-webkit-scrollbar{
+  display: none;
+}
+/* 一覧表示 */
 .team-new{
   width: 70%;
   padding: 0.5em;
@@ -7,33 +33,32 @@
   border-radius: 5px;
   text-align: center;
 }
-
 .teams-create{
+  color: #6091d3;
   margin: 0; 
   padding: 0;
   text-decoration: none;
-  color: #6091d3;
 }
 .teams{
   width: 70%;
-  padding: 0.5em;
-  margin: 1em 0.5em 0;
-  font-weight: bold;
-  color: #6091d3;
   border: solid 3px black;
   border-radius: 5px;
+  color: #6091d3;
+  font-weight: bold;
+  margin: 1em 0.5em 0;
+  padding: 0.5em;
 }
 .team{
-  padding: 0.5em;
-  font-weight: bold;
-  color: #6091d3;
   border: double 5px #6091d3;
   border-radius: 5px;
+  color: #6091d3;
+  font-weight: bold;
+  padding: 0.5em;
 }
 .team-name{
+  color: #6091d3;
   margin: 0; 
   padding: 0;
   text-align: left;
   text-decoration: none;
-  color: #6091d3;
 }

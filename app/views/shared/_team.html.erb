@@ -7,7 +7,7 @@
   <div class="teams">
     <% current_user.teams.each do |team| %>
     <div class="team">
-      <div class="team-name">
+      <div>
         <%= link_to team.team_name, team_lists_path(team), class:"team-name" %>
       </div>
     </div>

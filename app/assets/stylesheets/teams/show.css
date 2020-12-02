@@ -1,17 +1,17 @@
 .team-wrap{
-  padding: 8px 19px;
-  margin: 2em 30%;
-  color: #2c2c2f;
   border-top: solid 5px #5989cf;
   border-bottom: solid 5px #5989cf;
+  color: #2c2c2f;
+  margin: 2em 30%;
+  padding: 8px 19px;
 }
 /* チームメンバー */
 .team-member-top{
   text-align: right;
 }
 .team-member{
-  font-size: 18px;
   color: #5989cf;
+  font-size: 18px;
 }
 .user-path{
   color: black;
@@ -19,9 +19,9 @@
 
 /* チーム情報 */
 .team-info-top{
-  text-align: center;
-  font-size: 18px;
   color: #5989cf;
+  font-size: 18px;
+  text-align: center;
 }
 .team-info{
   margin-left: 2em;
@@ -31,33 +31,91 @@
 
 /* ボタン */
 .team-action{
-  text-align: center;
-  margin: 0 0 5vh;
   border-top: dashed 2px lightblue;
+  margin: 0 0 5vh;
+  text-align: center;
 }
 .action-btn{
   list-style: none;
-  width: 100%;
   margin-top: 50px;
+  width: 100%;
 }
 .team-edit-btn{
-  text-decoration: none;
   background-color: skyblue;
+  color: #FFF;
   font-size: 20px;
   font-weight: bold;
-  color: #FFF;
   margin: 20px 0px;
   padding: 2vh 3vw;
+  text-decoration: none;
 }
 .or-text{
   font-size: 20px;
 }
 .team-destroy{
-  text-decoration: none;
   background-color: skyblue;
-  text-align: center;
-  font-size: 20px;
   color: #FFF;
+  font-size: 20px;
   margin: 20px 0px;
   padding: 2vh 5vw;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* task */
+.task-member-top{
+  border-bottom: dashed 2px lightblue;
+  text-align: right;
+}
+.content-top{
+  margin-top: 1em;
+}
+li{
+  list-style: none;
+}
+
+/* task内容 */
+.content{
+  color: #5989cf;
+  font-size: 18px;
+}
+.report{
+  color: #5989cf;
+  font-size: 18px;
+}
+.final-report{
+  color: #5989cf;
+  font-size: 18px;
+}
+.temporary{
+  color: lightgrey;
+}
+.target-date{
+  color: #5989cf;
+  font-size: 18px;
+}
+.task-item{
+  color: #5989cf;
+  font-size: 18px;
+}
+.task-contens{
+  white-space: pre-wrap;
+}
+
+/* taskへのコメント */
+.comment{
+  border-top: dashed 2px lightblue;
+  font-size: 15px;
+}
+.comment-time{
+  font-size: 10px;
+}
+.comment-btn{
+  background: skyblue;
+  border: 1px solid skyblue;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 45px;
+  width: 25%;
 }

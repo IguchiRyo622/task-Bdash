@@ -3,9 +3,9 @@
   「TaskBdash」は多くのタスクを管理するためにリストで分別することをオススメします<br>
   タスクを管理するリストを書きフォームから作成してください
 </div>
-
+<%# teams/new.cssに依存 %>
 <%=form_with model: [@team, @list], local: true do |f|%>
-<div class="form-wrap-list">
+<div class="form-wrap">
 <%= render 'shared/error_messages', model: f.object %>
   <div class="form-header">
     <div class="title_bdash">
