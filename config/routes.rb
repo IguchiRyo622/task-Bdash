@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "teams#index"
   resources :teams do
     resources :lists do
-      resources :tasks
+      resources :tasks do
+        resources :comments, only: :create
+      end
     end
   end
   resources :users, only: :show

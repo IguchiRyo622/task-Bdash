@@ -16,4 +16,6 @@ class User < ApplicationRecord
   has_many :team_users
   has_many :teams, through: :team_users
   has_many :lists
+  has_many :tasks
+  has_many :comment
 end

@@ -23,6 +23,8 @@ class TasksController < ApplicationController
 
   def show
     @user = User.find_by(id: @task.user_id)
+    @comment = Comment.new
+    @comments = @task.comments.includes(:user)
   end
 
   def edit
