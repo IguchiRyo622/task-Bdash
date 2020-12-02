@@ -38,16 +38,16 @@ class TeamsController < ApplicationController
   end
 
   private
+
   def team_params
-    params.require(:team).permit(:team_name, user_ids:[])
+    params.require(:team).permit(:team_name, user_ids: [])
   end
 
   def update_params
-    params.require(:team).permit(:team_name, :team_info, user_ids:[])
+    params.require(:team).permit(:team_name, :team_info, user_ids: [])
   end
 
   def setting_team
     @team = Team.find(params[:id])
   end
-
 end

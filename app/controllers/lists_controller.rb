@@ -42,6 +42,7 @@ class ListsController < ApplicationController
   end
 
   private
+
   def list_params
     params.require(:list).permit(:list_name).merge(user_id: current_user.id)
   end
