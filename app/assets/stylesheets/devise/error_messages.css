@@ -1,11 +1,12 @@
+/* エラーの表示 */
 .error-alert {
   display: flex;
   justify-content: center;
   margin-bottom: 5vh;
 }
-
+/* エラー文の表示 */
 .error-message {
+  color: rgb(182, 48, 0);
   font-size: 1.3vw;
   list-style: circle;
-  color: rgb(182, 48, 0);
 }

@@ -3,32 +3,7 @@ body{
 }
 /* ページ全体 */
 .pages{
-  display: flex;
   background: linear-gradient(-135deg, #05fbff41, #ffffff);
+  display: flex;
   height: 88vh;
-}
-/* 部分テンプレート */
-.team-top{
-  width: 20%;
-  overflow: scroll;
-  scrollbar-width: none;
-}
-.team-top::-webkit-scrollbar{
-  display: none;
-}
-.list-top{
-  width: 30%;
-  overflow: scroll;
-  scrollbar-width: none;
-}
-.list-top::-webkit-scrollbar{
-  display: none;
-}
-.task-top{
-  width: calc(100vw - 20% - 30%);
-  overflow: scroll;
-  scrollbar-width: none;
-}
-.task-top::-webkit-scrollbar{
-  display: none;
 }
