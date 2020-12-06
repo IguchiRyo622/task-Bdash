@@ -50,7 +50,7 @@ class TasksController < ApplicationController
   end
 
   def task_update
-    params.require(:task).permit(:task_name, :content, :target_date, :report, :final_report, :task_item).merge(user_id: current_user.id)
+    params.require(:task).permit(:task_name, :content, :target_date, :report, :final_report, :task_item, :check).merge(user_id: current_user.id)
   end
 
   def setting_team_list
