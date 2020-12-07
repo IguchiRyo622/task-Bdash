@@ -130,7 +130,7 @@ rspec-rails 4.0.0
 
 | Column     | Type      | Option                         |
 | ---------- | --------- |------------------------------- |
-| item_check | boolean   | default: "false"               |
+| check      | boolean   | default: "false"               |
 | task_item  | string    |                                |
 | user       | reference | null: false, foreign_key: true |
 | task       | reference | null: false, foreign_key: true |
