@@ -101,6 +101,9 @@ li{
 .task-contens{
   white-space: pre-wrap;
 }
+span{
+  color:red;
+}
 
 /* taskへのコメント */
 .comment{

@@ -43,8 +43,13 @@
       <% end %>
     </li>
     <li class="content-top">
+    <% if @task.task_item.present? && @task.check == true%>
+      <div class="task-item">タスク項目</div>
+      <div class="task-contens"><span>&#10003;</span><%= @task.task_item %></div>
+    <% elsif @task.task_item.present? && @task.check == false %>
       <div class="task-item">タスク項目</div>
       <div class="task-contens"><%= @task.task_item %></div>
+    <% end %>
     </li>
   </ul>
 
