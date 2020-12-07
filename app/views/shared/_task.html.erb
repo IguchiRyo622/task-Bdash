@@ -1,7 +1,7 @@
 <%# shared/team.cssに依存 %>
 <div class="task-top">
   <div class="team-new">
-    <%= link_to '新規タスク作成', new_team_list_task_path(@team.id,@list), class:"tasks-create" %>
+    <%= link_to '新規タスク作成', new_team_list_task_path(@team.id,@list), class:"teams-create" %>
   </div>
   <div class="teams">
     <%= link_to @list.list_name, team_list_path(@team.id, @list), class:"team-name" %>

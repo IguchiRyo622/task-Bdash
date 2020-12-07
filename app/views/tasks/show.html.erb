@@ -43,12 +43,38 @@
       <% end %>
     </li>
     <li class="content-top">
-      <div class="task-item">タスク項目</div>
-      <div class="task-contens"><%= @task.task_item %></div>
+    <div class="task-item">タスク項目</div>
+    <% @items.each do |item|%>
+      <% if item.present? && item.check == true%>
+        <div class="task-contens"><span>&#10003;</span><%= item.task_item %></div>
+      <% elsif item.present? && item.check == false %>
+        <div class="task-contens"><%= item.task_item %></div>
+      <% end %>
+    <% end %>
     </li>
   </ul>
 
-  <% if @comments.present? %>
+  <div class="team-action">
+    <%= form_with model:[@task, @item], url: team_list_task_items_path(@team, @list, @task), local: true do |f| %>
+      <%= f.check_box :check %>
+      <%= f.text_field :task_item, placeholder: "タスク項目", class:"input-field"%>
+      <%= f.submit "送信", class:"comment-btn" %>
+    <% end %>
+  </div>
+
+  <div class="team-action">
+    <% if current_user.id == @task.user_id %>
+    <div class="action-btn">
+      <%= link_to 'タスクの編集', edit_team_list_task_path(@team.id, @list.id, @task), method: :get, class: "team-edit-btn" %>
+      <p class='or-text'>OR</p>
+      <%= link_to '削除', team_list_task_path(@team.id, @list.id, @task), method: :delete, class:'team-destroy' %>
+    </div>
+    <% else %>
+      <div class="temporary">編集は管理者のみが可能です</div>
+    <% end %>
+  </div>
+
+    <% if @comments.present? %>
     <div class="comment">
       <% @comments.each do |comment| %>
       <p>
@@ -66,18 +92,6 @@
     <%= form_with model:[@task, @comment], url: team_list_task_comments_path(@team, @list, @task), local: true do |f| %>
       <%= f.text_area :comment, placeholder: "コメントする", rows: "2", class:"info-field" %>
       <%= f.submit "送信", class:"comment-btn" %>
-    <% end %>
-  </div>
-
-  <div class="team-action">
-    <% if current_user.id == @task.user_id %>
-    <div class="action-btn">
-      <%= link_to 'タスクの編集', edit_team_list_task_path(@team.id, @list.id, @task), method: :get, class: "team-edit-btn" %>
-      <p class='or-text'>OR</p>
-      <%= link_to '削除', team_list_task_path(@team.id, @list.id, @task), method: :delete, class:'team-destroy' %>
-    </div>
-    <% else %>
-      <div class="temporary">編集は管理者のみが可能です</div>
     <% end %>
   </div>
   <%= link_to '戻る', :back%>

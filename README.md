@@ -117,7 +117,7 @@ rspec-rails 4.0.0
 | target_date  | datetime  |                                |
 | report       | string    |                                |
 | final_report | string    |                                |
-| task_item    | string    |                                |
+| user         | reference | null: false, foreign_key: true |
 | list         | reference | null: false, foreign_key: true |
 
 ### Association
@@ -128,9 +128,12 @@ rspec-rails 4.0.0
 
 ## itemsテーブル
 
-| Column     | Type    | Option           |
-| ---------- | ------- |----------------- |
-| item_check | boolean | default: "false" |
+| Column     | Type      | Option                         |
+| ---------- | --------- |------------------------------- |
+| check      | boolean   | default: "false"               |
+| task_item  | string    |                                |
+| user       | reference | null: false, foreign_key: true |
+| task       | reference | null: false, foreign_key: true |
 
 ### Association
 - belongs_to: task
