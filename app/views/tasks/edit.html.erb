@@ -41,13 +41,6 @@
         <%= f.text_field :final_report, class: 'input-field', id:"final-report", placeholder:"タスク完了報告をしましょう！" %>
       </div>
     </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <%= f.label :タスク要点, class:"form-text" %><br />
-        <%= f.check_box :check %>
-        <%= f.text_field :task_item, class: 'input-field', placeholder:"タスクの要点を書き出しましょう" %>
-      </div>
-    </div>
     <div class="actions">
       <%= f.submit "編集", class:"devise-btn" %>
     </div>

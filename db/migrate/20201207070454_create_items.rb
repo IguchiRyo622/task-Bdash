@@ -4,6 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.boolean :check, default: false, null: false
       t.string  :task_item
       t.references :task, null: false, foreign_key: true
+      t.references :user,              foreign_key: true
 
       t.timestamps
     end

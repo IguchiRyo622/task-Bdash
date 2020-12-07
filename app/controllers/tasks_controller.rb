@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def create
     @task = @list.tasks.new(task_params)
     if @task.save
-      redirect_to team_list_tasks_path(@team, @list, @list)
+      redirect_to team_list_tasks_path(@team, @list)
     else
       render :new
     end
@@ -25,6 +25,8 @@ class TasksController < ApplicationController
     @user = User.find_by(id: @task.user_id)
     @comment = Comment.new
     @comments = @task.comments.includes(:user)
+    @item = Item.new
+    @items = @task.items.includes(:user)
   end
 
   def edit
@@ -46,11 +48,11 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:task_name, :content, :target_date, :task_item).merge(user_id: current_user.id)
+    params.require(:task).permit(:task_name, :content, :target_date).merge(user_id: current_user.id)
   end
 
   def task_update
-    params.require(:task).permit(:task_name, :content, :target_date, :report, :final_report, :task_item, :check).merge(user_id: current_user.id)
+    params.require(:task).permit(:task_name, :content, :target_date, :report, :final_report).merge(user_id: current_user.id)
   end
 
   def setting_team_list
