@@ -5,6 +5,18 @@ class ItemsController < ApplicationController
     Item.create(item_params)
     redirect_to team_list_task_path(@team, @list, @task)
   end
+
+  def checked
+    item = Item.find(params[:id])
+    if item.check
+      item.update(check: false)
+    else
+      item.update(check: true)
+    end
+
+    item = Item.find(params[:id])
+    render json: { item: item}
+  end
   
   private
   
