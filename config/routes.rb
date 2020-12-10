@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :teams do
     resources :lists do
       resources :tasks do
-        resources :items, only: :create
+        resources :items, only: [:create, :destroy]
         resources :comments, only: :create
       end
     end

@@ -107,6 +107,14 @@ div[data-check="true"]:before{
   color: red;
 }
 
+.items{
+  position: relative;
+}
+.item-destroy{
+  position: absolute;
+  right: 0;
+}
+
 /* taskへのコメント */
 .comment{
   border-top: dashed 2px lightblue;
