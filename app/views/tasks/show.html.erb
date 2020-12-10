@@ -43,14 +43,12 @@
       <% end %>
     </li>
     <li class="content-top">
-    <div class="task-item">タスク項目</div>
-    <% @items.each do |item|%>
-      <% if item.present? && item.check == true%>
-        <div class="task-contens"><span>&#10003;</span><%= item.task_item %></div>
-      <% elsif item.present? && item.check == false %>
-        <div class="task-contens"><%= item.task_item %></div>
+      <div class="task-item">タスク項目</div>
+      <% @items.each do |item|%>
+        <div class="items" data-id=<%= item.id %> data-check=<%= item.check %>>
+          <%= item.task_item %>
+        </div>
       <% end %>
-    <% end %>
     </li>
   </ul>
 

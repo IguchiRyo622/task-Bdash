@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_task
+  before_action :set_task, only: [:create]
   
   def create
     Item.create(item_params)
@@ -14,8 +14,8 @@ class ItemsController < ApplicationController
       item.update(check: true)
     end
 
-    item = Item.find(params[:id])
-    render json: { item: item}
+    post = Item.find(params[:id])
+    render json: { item: post }
   end
   
   private

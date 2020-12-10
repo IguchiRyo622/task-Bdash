@@ -101,8 +101,10 @@ li{
 .task-contens{
   white-space: pre-wrap;
 }
-span{
-  color:red;
+/* itemがtrueの時に✔︎を足す */
+div[data-check="true"]:before{
+  content: "✓";
+  color: red;
 }
 
 /* taskへのコメント */
