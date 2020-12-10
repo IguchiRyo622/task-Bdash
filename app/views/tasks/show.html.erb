@@ -44,19 +44,25 @@
     </li>
     <li class="content-top">
       <div class="task-item">タスク項目</div>
-      <% @items.each do |item|%>
-        <div class="items" data-id=<%= item.id %> data-check=<%= item.check %>>
-          <%= item.task_item %>
-          <%= link_to team_list_task_item_path(@team, @list, @task), class: "item-destroy", method: :delete do%>
-            <%= image_tag "destroy.png", width:'20px', height:'20px' %>
-          <% end %>
+      <% if @items.present? %>
+        <% @items.each do |item|%>
+          <div class="items" data-id=<%= item.id %> data-check=<%= item.check %>>
+            <%= item.task_item %>
+            <%= link_to team_list_task_item_path(@team, @list, @task), class: "item-destroy", method: :delete do%>
+              <%= image_tag "destroy.png", width:'20px', height:'20px' %>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="temporary">
+          タスク内容を細かく項目化したい時にお使いください。<br>
+          下記からタスク項目を追加しましょう!
         </div>
       <% end %>
     </li>
   </ul>
-
   <div class="team-action">
-    <div class="explannation">項目が完了したら、項目をクリックしてください</div>
+    <div class="explannation">完了したら、項目をクリックしてください。</div>
     <%= form_with model:[@task, @item], url: team_list_task_items_path(@team, @list, @task), local: true do |f| %>
       <%= f.check_box :check %>
       <%= f.text_field :task_item, placeholder: "タスク項目", class:"input-field"%>
@@ -96,5 +102,5 @@
       <%= f.submit "送信", class:"comment-btn" %>
     <% end %>
   </div>
-  <%= link_to '戻る', :back%>
+  <%= link_to '戻る', team_list_tasks_path(@team.id,@list)%>
 </div>
