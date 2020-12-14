@@ -5,13 +5,12 @@ describe Task do
   end
   describe 'タスク作成' do
     context 'タスク作成がうまくいくとき' do
-      it 'task_name,content,target_date,task_itemが存在すれば作成できる' do
+      it 'task_name,content,target_date,user_id,list_idが存在すれば作成できる' do
         expect(@task).to be_valid
       end
       it 'task_name以外空でも作成できる' do
         @task.content = nil
         @task.target_date = nil
-        @task.task_item = nil
         expect(@task).to be_valid
       end
     end

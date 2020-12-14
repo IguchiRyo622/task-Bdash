@@ -1,8 +1,26 @@
 class ItemsController < ApplicationController
-  before_action :set_task
+  before_action :set_task, only: [:create, :destroy]
   
   def create
     Item.create(item_params)
+    redirect_to team_list_task_path(@team, @list, @task)
+  end
+
+  def checked
+    item = Item.find(params[:id])
+    if item.check
+      item.update(check: false)
+    else
+      item.update(check: true)
+    end
+
+    post = Item.find(params[:id])
+    render json: { item: post }
+  end
+
+  def destroy
+    @item = Item.find_by(params[:id])
+    @item.destroy
     redirect_to team_list_task_path(@team, @list, @task)
   end
   
