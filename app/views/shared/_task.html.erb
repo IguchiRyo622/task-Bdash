@@ -8,9 +8,12 @@
     <% @tasks.each do |task| %>
     <div class="team">
       <div>
-      <% if task.final_report.present?%>
+      <% if task.final_report.present? || task.final_report_date.present? %>
         <span class="check"></span>
         <%= link_to task.task_name, team_list_task_path(@team.id, @list.id, task), class:"team-name" %>
+        <% if task.final_report_date.present? %>
+          <span class="report_date"><%= task.final_report_date.to_s(:datetime_jp) %></span>
+        <% end %>
       <% else %>
         <%= link_to task.task_name, team_list_task_path(@team.id, @list.id, task), class:"team-name" %>
       <% end %>
