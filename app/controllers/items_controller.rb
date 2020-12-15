@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find_by(params[:id])
+    @item = Item.find(params[:id])
     @item.destroy
     redirect_to team_list_task_path(@team, @list, @task)
   end

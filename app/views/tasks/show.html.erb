@@ -48,7 +48,7 @@
         <% @items.each do |item|%>
           <div class="items" data-id=<%= item.id %> data-check=<%= item.check %>>
             <%= item.task_item %>
-            <%= link_to team_list_task_item_path(@team, @list, @task), class: "item-destroy", method: :delete do%>
+            <%= link_to team_list_task_item_path(@team, @list, @task, item), class: "item-destroy", method: :delete do%>
               <%= image_tag "destroy.png", width:'20px', height:'20px' %>
             <% end %>
           </div>
