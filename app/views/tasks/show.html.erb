@@ -4,6 +4,12 @@
   <div class="team-name">
     <%= @task.task_name %>
   </div>
+  <% if @task.final_report_date.present? %>
+    <div class="task_report_date">
+      <div class="team-member">タスク完了日</div>
+      <%= @task.final_report_date.to_s(:datetime_jp) %>
+    </div>
+  <% end %>
   <div class="task-member-top">
     <div class="team-member">タスク管理者</div>
     <%= @user.nickname %>

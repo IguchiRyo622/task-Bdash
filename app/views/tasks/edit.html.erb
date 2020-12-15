@@ -41,6 +41,12 @@
         <%= f.text_field :final_report, class: 'input-field', id:"final-report", placeholder:"タスク完了報告をしましょう！" %>
       </div>
     </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <%= f.label :タスク完了日時, class:"form-text" %><br />
+        <%= f.datetime_field :final_report_date, class: 'date-select' %>
+      </div>
+    </div>
     <div class="actions">
       <%= f.submit "編集", class:"devise-btn" %>
     </div>
