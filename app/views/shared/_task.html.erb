@@ -7,7 +7,6 @@
     <%= link_to @list.list_name, team_list_path(@team.id, @list), class:"team-name" %>
     <% @tasks.each do |task| %>
     <div class="team">
-      <div>
       <% if task.final_report.present? || task.final_report_date.present? %>
         <span class="check"></span>
         <%= link_to task.task_name, team_list_task_path(@team.id, @list.id, task), class:"team-name" %>
@@ -17,7 +16,6 @@
       <% else %>
         <%= link_to task.task_name, team_list_task_path(@team.id, @list.id, task), class:"team-name" %>
       <% end %>
-      </div>
     </div>
     <% end %>
   </div>
