@@ -5,7 +5,6 @@ class TasksController < ApplicationController
   before_action :setting_includes, only: [:index, :show, :edit]
 
   def index
-    @task = Task.find_by(params[:task_id])
   end
 
   def new

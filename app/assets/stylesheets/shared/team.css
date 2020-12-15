@@ -62,3 +62,9 @@
   text-align: left;
   text-decoration: none;
 }
+
+/* 完了報告があった場合タスク一覧に✔︎をつける */
+.check:before{
+  content: "✓";
+  color: red;
+}
