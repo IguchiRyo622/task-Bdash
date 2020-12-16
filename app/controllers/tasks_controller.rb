@@ -26,6 +26,13 @@ class TasksController < ApplicationController
     @comments = @task.comments.includes(:user)
     @item = Item.new
     @items = @task.items.includes(:user)
+    new_history = @task.browsing_tasks.new
+    new_history.user_id = current_user.id
+    if current_user.browsing_tasks.exists?(task_id: "#{params[:id]}")
+      old_history = current_user.browsing_tasks.find_by(task_id: "#{params[:id]}")
+      old_history.destroy
+    end
+    new_history.save
   end
 
   def edit
