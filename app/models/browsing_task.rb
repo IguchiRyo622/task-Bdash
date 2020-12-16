@@ -1,0 +1,2 @@
+class BrowsingTask < ApplicationRecord
+end
