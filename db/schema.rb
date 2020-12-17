@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_090356) do
+ActiveRecord::Schema.define(version: 2020_12_16_093359) do
+
+  create_table "browsing_tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "task_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_browsing_tasks_on_task_id"
+    t.index ["user_id"], name: "index_browsing_tasks_on_user_id"
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
@@ -90,6 +99,8 @@ ActiveRecord::Schema.define(version: 2020_12_15_090356) do
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
+  add_foreign_key "browsing_tasks", "tasks"
+  add_foreign_key "browsing_tasks", "users"
   add_foreign_key "comments", "tasks"
   add_foreign_key "comments", "users"
   add_foreign_key "items", "tasks"

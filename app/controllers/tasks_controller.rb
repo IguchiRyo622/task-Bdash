@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   before_action :setting_team_list
   before_action :setting_task, only: [:show, :edit, :update, :destroy]
   before_action :setting_includes, only: [:index, :show, :edit]
+  after_action :browsing, only: :show
 
   def index
   end
@@ -66,5 +67,20 @@ class TasksController < ApplicationController
   def setting_includes
     @lists = @team.lists.includes(:user)
     @tasks = @list.tasks.includes(:list)
+  end
+
+  def browsing
+    new_history = @task.browsing_tasks.new
+    new_history.user_id = current_user.id
+    if current_user.browsing_tasks.exists?(task_id: "#{params[:id]}")
+      old_history = current_user.browsing_tasks.find_by(task_id: "#{params[:id]}")
+      old_history.destroy
+    end
+    new_history.save
+    history_stock_limit = 5
+    histories = current_user.browsing_tasks.all
+    if histories.count > history_stock_limit
+      histories[0].destroy
+    end
   end
 end

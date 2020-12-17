@@ -27,6 +27,16 @@
         </div>
       <% end %>
     </div>
+    <div class="user-team-wrap">
+      <div class="user-team-top"><%= @user.nickname%>が最近閲覧したタスク</div>
+        <% @history.each do |history| %>
+          <% if history.user_id == current_user.id %>
+            <div class="user-team">
+              <%= history.task.task_name %>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
     <div class="team-action">
       <div class="action-btn">
         <%= link_to 'ユーザーの編集', edit_user_registration_path, method: :get, class: "team-edit-btn" %>
