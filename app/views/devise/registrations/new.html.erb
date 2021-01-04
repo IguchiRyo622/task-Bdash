@@ -3,7 +3,6 @@
   「TaskBdash」にはアカウントが必要になります<br>
   下記フォームからアカウントを作成しましょう！
 </div>
-
 <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
   <div class="form-wrap">
   <%= render 'shared/error_messages', model: f.object %>

@@ -1,5 +1,11 @@
 <%= render 'shared/header' %>
 <%# showアクションはteams/show.cssに依存 %>
+<div class="transition">
+  <%= link_to "チーム", team_path(@team.id,@list), class:"user-path"%>
+  >>
+  <%= link_to "リスト", team_list_path(@team.id, @list), class:"user-path"%>
+  >> タスク
+</div>
 <div class="team-wrap">
   <div class="team-name">
     <%= @task.task_name %>
@@ -108,5 +114,5 @@
       <%= f.submit "送信", class:"comment-btn" %>
     <% end %>
   </div>
-  <%= link_to '戻る', team_list_tasks_path(@team.id,@list)%>
+  <%= link_to "タスク一覧へ", team_list_tasks_path(@team, @list)%>
 </div>

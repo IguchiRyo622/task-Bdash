@@ -52,7 +52,8 @@ class TasksController < ApplicationController
   end
 
   def task_update
-    params.require(:task).permit(:task_name, :content, :target_date, :report, :final_report, :final_report_date).merge(user_id: current_user.id)
+    params.require(:task).permit(:task_name, :content, :target_date, :report, :final_report,
+                                 :final_report_date).merge(user_id: current_user.id)
   end
 
   def setting_team_list
@@ -72,15 +73,13 @@ class TasksController < ApplicationController
   def browsing
     new_history = @task.browsing_tasks.new
     new_history.user_id = current_user.id
-    if current_user.browsing_tasks.exists?(task_id: "#{params[:id]}")
-      old_history = current_user.browsing_tasks.find_by(task_id: "#{params[:id]}")
+    if current_user.browsing_tasks.exists?(task_id: params[:id].to_s)
+      old_history = current_user.browsing_tasks.find_by(task_id: params[:id].to_s)
       old_history.destroy
     end
     new_history.save
     history_stock_limit = 5
     histories = current_user.browsing_tasks.all
-    if histories.count > history_stock_limit
-      histories[0].destroy
-    end
+    histories[0].destroy if histories.count > history_stock_limit
   end
 end
