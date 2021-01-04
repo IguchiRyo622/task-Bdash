@@ -41,8 +41,10 @@
   width: 100%;
 }
 .team-edit-btn{
-  background-color: skyblue;
-  color: #FFF;
+  background-color: #FFF;
+  border: solid 3px skyblue;
+  border-radius: 15px;
+  color: skyblue;
   font-size: 20px;
   font-weight: bold;
   margin: 20px 0px;
