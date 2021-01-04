@@ -114,5 +114,5 @@
       <%= f.submit "送信", class:"comment-btn" %>
     <% end %>
   </div>
-  <%= link_to '戻る', team_list_tasks_path(@team.id,@list)%>
+  <%= link_to "タスク一覧へ", team_list_tasks_path(@team, @list)%>
 </div>

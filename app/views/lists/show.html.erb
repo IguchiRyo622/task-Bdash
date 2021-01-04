@@ -20,5 +20,5 @@
       <%= link_to '削除', team_list_path(@team.id,@list.id), method: :delete, class:'team-destroy' %>
     </div>
   </div>
-  <%= link_to '戻る', :back%>
+  <%= link_to "タスク一覧へ", team_list_tasks_path(@team, @list)%>
 </div>
