@@ -1,8 +1,12 @@
+.transition{
+  margin: 2em 30% 0;
+  padding: 8px 19px;
+}
 .team-wrap{
   border-top: solid 5px #5989cf;
   border-bottom: solid 5px #5989cf;
   color: #2c2c2f;
-  margin: 2em 30%;
+  margin: 0 30% 2em;
   padding: 8px 19px;
 }
 /* チームメンバー */
