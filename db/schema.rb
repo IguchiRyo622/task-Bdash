@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_093359) do
+ActiveRecord::Schema.define(version: 2021_01_13_055139) do
 
   create_table "browsing_tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "task_id"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 2020_12_16_093359) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_lists_on_team_id"
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
