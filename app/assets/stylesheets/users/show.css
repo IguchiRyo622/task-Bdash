@@ -6,8 +6,13 @@
   padding: 8px 19px;
 }
 
+.user-top{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5em;
+}
 /* ニックネーム */
-.user-name-top{
+.user-id{
   color: #5989cf;
   font-size: 18px;
   margin: 0; 
@@ -15,10 +20,20 @@
   text-align: left;
   text-decoration: none;
 }
-/* ユーザーid */
-.user-id-top{
-  color: #5989cf;
-  font-size: 18px;
+/* フォロー */
+.relationship{
+  margin-top: 1em;
+}
+.follow-btn{
+  background-color: #FFF;
+  border: solid 3px skyblue;
+  border-radius: 18px;
+  color: skyblue;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 2em 0px;
+  padding: 1vh;
+  text-decoration: none;
 }
 /* ユーザー情報 */
 .user-info-top{

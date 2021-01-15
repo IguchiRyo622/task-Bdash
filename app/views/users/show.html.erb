@@ -1,13 +1,16 @@
 <%= render 'shared/header'%>
 <div class="user-wrap">
   <%# ユーザーのニックネームとユーザーidを表示 %>
-  <div class="user-name-top">ニックネーム</div>
-  <div class="user-name">
-    <%= @user.nickname %>
-  </div>
-  <div class="user-id-top">ユーザーID</div>
-  <div class="user-id">
-    <%= @user.user_name %>
+  <div class="user-top">
+    <div class="user-name">
+      <%= @user.nickname %>
+      <div class="user-id">ID：
+        <%= @user.user_name %>
+      </div>
+    </div>
+    <div class="relationship">
+      <%= link_to 'フォロー', "#", method: :get, class: "follow-btn" %>
+    </div>
   </div>
 
   <% if @user.profile.present? %>
