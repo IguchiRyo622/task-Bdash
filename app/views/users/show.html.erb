@@ -9,7 +9,11 @@
       </div>
     </div>
     <div class="relationship">
-      <%= link_to 'フォロー', "#", method: :get, class: "follow-btn" %>
+      <% if current_user.following?(@user) %>
+        <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :post, class:"follow-btn" %>
+      <% else %>
+        <%= link_to 'フォロー', follow_path(@user.id), method: :post, class:"follow-btn" %>
+      <% end %>
     </div>
   </div>
 

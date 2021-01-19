@@ -21,18 +21,23 @@ class User < ApplicationRecord
   has_many :comments
   has_many :items
 
-  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
-  has_many :followings, through: :following_relationships
-  has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
-  has_many :followers, through: :follower_relationships
+  has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :following_user, through: :follower, source: :following
+  has_many :follower_user, through: :followed, source: :follower
 
-  def following?(other_user)
-    following_relationships.find_by(following_id: other_user.id)
+  # ユーザーをフォローする
+  def follow(user_id)
+    follower.create(following_id: user_id)
   end
-  def follow!(other_user)
-    following_relationships.create!(following_id: other_user.id)
+
+  # ユーザーのフォローを外す
+  def unfollow(user_id)
+    follower.find_by(following_id: user_id).destroy
   end
-  def unfollow!(other_user)
-    following_relationships.find_by(following_id: other_user.id).destroy
+
+  # フォロー確認をおこなう
+  def following?(user)
+    following_user.include?(user)
   end
 end
