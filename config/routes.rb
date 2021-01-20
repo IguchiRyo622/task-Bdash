@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: :show do
-    member do
+    collection do
       get 'search'
     end
   end
