@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get 'search'
+    end
+  end
   post 'follow/:id' => 'relationships#follow', as: 'follow' 
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' 
 end
