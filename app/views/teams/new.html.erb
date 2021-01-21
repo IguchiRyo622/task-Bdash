@@ -28,7 +28,9 @@
       <select class="team_member" name="team[user_ids][]">
         <% User.where.not(id: current_user.id).each do |user| %>
           <option value=""></option>
-          <option value=<%=user.id %>><%= user.user_name %></option>
+          <% if current_user.following?(user) %>
+            <option value=<%=user.id %>><%= user.user_name %></option>
+          <% end %>
         <% end %>
       </select>
       <input name="team[user_ids][]" type="hidden" value=<%= current_user.id %>>

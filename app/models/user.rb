@@ -20,4 +20,32 @@ class User < ApplicationRecord
   has_many :browsing_tasks, dependent: :destroy
   has_many :comments
   has_many :items
+
+  has_many :follower, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
+  has_many :followed, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
+  has_many :following_user, through: :follower, source: :following
+  has_many :follower_user, through: :followed, source: :follower
+
+  # ユーザーをフォローする
+  def follow(user_id)
+    follower.create(following_id: user_id)
+  end
+
+  # ユーザーのフォローを外す
+  def unfollow(user_id)
+    follower.find_by(following_id: user_id).destroy
+  end
+
+  # フォロー確認をおこなう
+  def following?(user)
+    following_user.include?(user)
+  end
+
+  def self.search(search)
+    if search != ''
+      User.where(['user_name LIKE(?) OR nickname LIKE(?)', "%#{search}%", "%#{search}%"])
+    else
+      User.all
+    end
+  end
 end
