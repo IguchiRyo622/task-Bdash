@@ -3,14 +3,14 @@ task-Bdash<br>
 スーパーマリオのBダッシュのようにタスクを駆け抜けることを手助けできるWebアプリケーションを作ります。
 
 ### URL
-https://task-bdash.herokuapp.com/
+http://54.248.25.73:3000/
 
 ### ID/Pass
 ID:admin<br>
 Pass:2222
 
 ### テスト用アカウント
-mail:test@gmail.com<br>
+mail:test@com<br>
 pass:abc123
 
 ### 利用方法
@@ -21,7 +21,7 @@ pass:abc123
 私が別Webアプリケーションでタスク管理を行っていた際に出来なかった作業中や完了時の思い付きをタスク内に別で記録することができる。
 
 ## 要件定義
-https://docs.google.com/spreadsheets/d/1TzMPe5POlO6QnnP0ZJmWfQHBmhRCoWso_fOYegzotBs/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1TzMPe5POlO6QnnP0ZJmWfQHBmhRCoWso_fOYegzotBs/edit?usp=sharing<br>
 色が変わっている所は未実装です。頑張ります。
 
 ## 機能について
