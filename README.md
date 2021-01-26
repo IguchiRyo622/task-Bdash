@@ -21,7 +21,7 @@ pass:abc123
 私が別Webアプリケーションでタスク管理を行っていた際に出来なかった作業中や完了時の思い付きをタスク内に別で記録することができる。
 
 ## 要件定義
-https://docs.google.com/spreadsheets/d/1TzMPe5POlO6QnnP0ZJmWfQHBmhRCoWso_fOYegzotBs/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1TzMPe5POlO6QnnP0ZJmWfQHBmhRCoWso_fOYegzotBs/edit?usp=sharing<br>
 色が変わっている所は未実装です。頑張ります。
 
 ## 機能について
