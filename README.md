@@ -3,14 +3,14 @@ task-Bdash<br>
 スーパーマリオのBダッシュのようにタスクを駆け抜けることを手助けできるWebアプリケーションを作ります。
 
 ### URL
-https://task-bdash.herokuapp.com/
+http://54.248.25.73:3000/
 
 ### ID/Pass
 ID:admin<br>
 Pass:2222
 
 ### テスト用アカウント
-mail:test@gmail.com<br>
+mail:test@com<br>
 pass:abc123
 
 ### 利用方法
