@@ -19,3 +19,10 @@
 .twitter{
   color: aliceblue;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .top-page-footer{
+    height: 4vh;
+  }
+}

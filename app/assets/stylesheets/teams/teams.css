@@ -7,3 +7,9 @@ body{
   display: flex;
   height: 88vh;
 }
+
+@media (max-width: 1024px) {
+  .pages{
+    height: 91vh;
+  }
+}
