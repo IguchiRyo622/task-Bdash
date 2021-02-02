@@ -61,3 +61,11 @@
   font-weight: bold;
   padding: 0.5em;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .user-wrap{
+    margin: 2em 15%;
+    padding: 8px 19px;
+  }
+}

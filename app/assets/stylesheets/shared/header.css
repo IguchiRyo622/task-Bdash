@@ -24,7 +24,6 @@
 
 /* ヘッダーメニュー */
 .nav {
-  display: flex;
   font-size: 15px;
   justify-content: space-between;
 }
@@ -32,8 +31,8 @@
 /* メニューリスト */
 .lists-right {
   align-items: flex-end;
-  font-weight: bold;
   display: flex;
+  font-weight: bold;
   list-style: none;
 }
 .user-nickname {
@@ -65,4 +64,15 @@
   border-radius: 4px;
   padding: 10px 16px 8px;
   resize: none;
+}
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .top-page-header{
+    height: 5vh;
+  }
+  .header-bdash{
+    font-size: 35px;
+    margin: 5px 30% 0px 5%;
+  }
 }

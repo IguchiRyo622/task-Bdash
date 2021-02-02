@@ -79,3 +79,11 @@
   font-weight: bold;
   line-height: 45px;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .form-wrap-session{
+    margin: 4em 15%;
+    padding: 2em 1em 2em;
+  }
+}

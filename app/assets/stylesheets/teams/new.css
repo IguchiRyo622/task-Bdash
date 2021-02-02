@@ -22,3 +22,11 @@
 .date-select{
   font-size: 15px;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .form-wrap{
+    margin: 5em 15%;
+    padding: 2em 1em 2em;
+  }
+}
