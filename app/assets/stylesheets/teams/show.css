@@ -143,3 +143,15 @@ div[data-check="true"]:before{
   line-height: 45px;
   width: 25%;
 }
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .transition{
+    margin: 2em 15% 0;
+    padding: 8px 19px;
+  }
+  .team-wrap{
+    margin: 0 15% 2em;
+    padding: 8px 19px;
+  }
+}
