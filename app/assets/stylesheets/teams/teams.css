@@ -8,6 +8,7 @@ body{
   height: 88vh;
 }
 
+/* タブレット表示時 */
 @media (max-width: 1024px) {
   .pages{
     height: 91vh;
