@@ -75,10 +75,23 @@ rspec-rails 4.0.0
 | password  | string | null: false               |
 
 ### Association
+- has_many: relationships
 - has_many: lists
 - has_many: comments
+- has_many: browsing_tasks
 - has_many: team_users
 - has_many: team, through: team_users
+
+
+## relationshipsテーブル
+
+| Column       | Type    | Options                   |
+| ------------ | ------- | ------------------------- |
+| follower_id  | integer | null: false, unique: true |
+| following_id | integer | null: false, unique: true |
+
+### Association
+- has_many: users
 
 
 ## teamsテーブル
@@ -134,6 +147,7 @@ rspec-rails 4.0.0
 - belongs_to: list
 - has_many: items
 - has_many: comments
+- has_many: browsing_tasks
 
 
 ## itemsテーブル
@@ -154,6 +168,18 @@ rspec-rails 4.0.0
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | comment | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| task    | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to: user
+- belongs_to: task
+
+
+## browsing_tasksテーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | task    | references | null: false, foreign_key: true |
 
