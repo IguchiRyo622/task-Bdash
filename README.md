@@ -53,7 +53,8 @@ https://docs.google.com/spreadsheets/d/1TzMPe5POlO6QnnP0ZJmWfQHBmhRCoWso_fOYegzo
 
 
 ### データベース設計
-![](https://i.gyazo.com/80f67f0859ebd6ac4e147a2676ad94f0.png)
+![](https://i.gyazo.com/dfbb73f02e4ae050de7e1717c6c15d9e.png)
+
 
 
 ### ローカルでの動作方法
